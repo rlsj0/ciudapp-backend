@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ciudapp-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ciudapp-backend
+  template:
+    metadata:
+      labels:
+        app: ciudapp-backend
+    spec:
+      containers:
+      - name: ciudapp-backend
+        image: rlsanjose/ciudapp-backend-cloud:1.0
+        ports:
+        - containerPort: 8080
+
