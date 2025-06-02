@@ -1,3 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ciudapp-backend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: ciudapp-backend
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -18,4 +29,3 @@ spec:
         image: rlsanjose/ciudapp-backend-cloud:1.0
         ports:
         - containerPort: 8080
-
