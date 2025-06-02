@@ -34,7 +34,7 @@ services:
     networks:
       - backend
     build:
-      context: ./backend
+      context: ./ciudapp-backend
       dockerfile: Dockerfile
     depends_on:
       mariadb:
@@ -46,6 +46,6 @@ services:
     networks:
       - backend
     build:
-      context: ./frontend
+      context: ./ciudapp-frontend
     depends_on:
       - backend
